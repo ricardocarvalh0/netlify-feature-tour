@@ -46,21 +46,17 @@ const { title, description, home = false } = Astro.props;
 
     html,
     body {
-
       color: var(--text);
       font-family: var(--font-secondary);
-      font-size: 18px;
+      font-size: 22px;
       line-height: 1.45;
-      margin: 0;
-      padding: 0;
     }
 
     body {
       display: flex;
       flex-direction: column;
       justify-content: center;
-      min-height: 100vh;
-      padding: 5rem 0 4rem;
+        align-items: center;
     }
 
     h1, h2, h3 {
@@ -81,11 +77,8 @@ const { title, description, home = false } = Astro.props;
 
     main {
       background: var(--light);
-      margin-bottom: 2rem;
-      margin-top: 3rem;
-      padding: 2rem max(5vw, 50vw - 60ch / 2);
-      width: 100vw;
       border-style: none;
+        margin: 0 auto;
     }
 
     .sr-only:not(:focus):not(:active) {
@@ -120,13 +113,6 @@ const { title, description, home = false } = Astro.props;
       background: var(--primary-darker);
     }
 
-
-    .container,
-    .footer {
-      margin: 0 auto;
-      text-align: center;
-      width: min(90vw, 900px);
-    }
 
     .heading {
       color: var(--heading);
@@ -176,41 +162,6 @@ const { title, description, home = false } = Astro.props;
   </style>
 </head>
 <body>
-  <header class="container">
-    <h1 class="heading">{title}</h1>
-
-    <p class="description">{description}</p>
-
-    {home !== true && (
-      <p>
-        <a href="/">&larr; back to home</a>
-      </p>
-    )}
-  </header>
-
   <slot />
-
-  <footer class="footer">
-    <nav>
-      <ul>
-        <li>
-          <a class="footer-link" href="https://www.netlify.com/trust-center/">Trust Center</a>
-        </li>
-        <li>
-          <a class="footer-link" href="https://www.netlify.com/privacy/">Privacy</a>
-        </li>
-        <li>
-          <a class="footer-link" href="https://www.netlify.com/security/">Security</a>
-        </li>
-        <li>
-          <a class="footer-link" href="https://www.netlify.com/gdpr-ccpa/">GDPR/CCPA</a>
-        </li>
-        <li>
-          <a class="footer-link" href="mailto:fraud@netlify.com?subject=Abuse%20report&body=Please%20include%20the%20site%20URL%20and%20reason%20for%20your%20report%2C%20and%20we%20will%20reply%20promptly." target="_blank" rel="noopener noreferrer">Abuse</a>
-        </li>
-      </ul>
-    </nav>
-  </footer>
-
 </body>
 </html>
